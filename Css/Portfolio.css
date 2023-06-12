@@ -1,0 +1,630 @@
+/* start variables */
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-color-alt-net: #009688;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+
+/* End variables */
+/* start Globul rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* End Globul rules */
+
+/* start Side Bar */
+.side-bar {
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    z-index: 2;
+}
+@media (max-width: 991px) {
+    .side-bar  {
+        display: none;
+    }
+}
+@media (max-width: 350px) {
+    .side-bar  {
+        width: 211px;
+    }
+}
+.side-bar img {
+    width: 120px;
+    max-width: 100%;
+    border-radius: 6px;
+}
+.side-bar h3 {
+    font-size: 25px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+.side-bar span {
+    display: block;
+    margin: 10px 0;
+    color: #999;
+}
+.side-bar .links li {
+    margin-bottom: 10px;
+}
+.side-bar .links li .porto {
+    color: #009688;
+}
+.side-bar .links li:hover a {
+    background-color: rgb(226, 226, 226);
+    color: rgb(0, 0, 0);
+    width: calc(100% + 20px);
+}
+.side-bar .links li i {
+    margin-right: 10px
+}
+.side-bar .links li a {
+    display: block;
+    color: black;
+    text-transform: uppercase;
+}
+.side-bar .social {
+    margin-top: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+}
+.side-bar .social a {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.side-bar .social i:hover {
+    color: #2196f3;
+}
+.side-bar .social a .Facebook {
+    color: #2196f3;
+}
+/* End Side Bar */
+
+/* strat Bar */
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.bar > i {
+    font-size: 50px;
+}
+.bar .avatar {
+    width: 75px;
+    max-width: 100%;
+    border-radius: 50%;
+    transition: 3.5s;
+}
+.bar:hover {
+    padding-left: 0;
+}
+.bar:hover .side-bar {
+    display: block;
+    top: 0;
+    transition: 3s;
+    opacity: 0.95
+} 
+.bar:hover .avatar {
+    opacity: 0;
+} 
+@media (min-width: 992px) {
+    .bar  {
+        display: none;
+    }
+}
+/* End Bar */
+
+/* start header */
+.Header {
+    margin-left: 300px;
+}
+@media (max-width: 991px) {
+    .Header  {
+        margin-left: 0;
+        transition: 0.3s;
+    }
+}
+/* End Header */
+
+/* start Portfolio */
+.Portfolio h2 {
+    padding: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+.Portfolio .filter {
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 15px;
+}
+.Portfolio .filter .fit {
+    margin-right: 10px;
+    font-weight: bold
+}
+.Portfolio .filter .all {
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+}
+.Portfolio button {
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-right: 3px
+}
+@media (max-width: 495px) {
+    .Portfolio button:last-child  {
+        display: none;
+    }
+}
+@media (max-width: 395px) {
+    .Portfolio button:nth-last-of-type(2) {
+        display: none;
+    }
+}
+.Portfolio button i {
+    margin-right: 5px;
+}
+.Portfolio .boxs {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.Portfolio .boxs .box {
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+.Portfolio .boxs .box .images {
+    position: relative;
+}
+.Portfolio .boxs .box .images::before {
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255 255 255 / 10%);
+    width: 0px;
+    height: 0px;
+    transition: 0.3s;
+}
+.Portfolio .boxs .box .images:hover::before {
+    height: 100%;
+    width: 100%;
+}
+.Portfolio .boxs .box .images img {
+    width: 100%;
+    height: 250px;
+}
+.Portfolio .boxs .box .content {
+    padding: 15px;
+}
+.Portfolio .boxs .box .content h3 {
+    font-size: 18px;
+    color: #2196f3
+}
+.Portfolio .boxs .box .content p {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #777;
+}
+.Portfolio .Links {
+    margin: 25px auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.Portfolio .Links::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f100";
+    font-weight: 900;
+    color: var(--main-color);
+}
+.Portfolio .Links::after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f101";
+    font-weight: 900;
+    color: var(--main-color);
+}
+.Portfolio .Links a {
+    display: block;
+    color: black;
+    font-size: 18px;
+    margin-right: 5px;
+    padding: 5px 15px
+}
+.Portfolio .Links a:not(:first-child):hover {
+    background-color: #000;
+    color: white;
+}
+.Portfolio .Links a:first-child {
+    background-color: #000;
+    color: white;
+    margin-left: 5px;
+}
+.Portfolio .Links a:first-child:hover {
+    color: #000;
+    background-color: #c6c6c6;
+}
+.Portfolio .porto-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+@media (max-width: 767px) {
+    .Portfolio .porto-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+}
+}
+.Portfolio .porto-content .port {
+    flex: 1;
+} 
+.Portfolio .porto-content .port img {
+    width: 100%; 
+}
+/* End Portfolio */
+
+/* start About */
+.about {
+    margin-top: 30px;
+}
+.about .heading-about h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.about .heading-about p {
+    font-size: 19px;
+    color: #555;
+    line-height: 1.8;
+}
+.about .skills {
+    margin-top: 20px;
+}
+.about .skills h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--main-color);
+}
+.about .skills .skill {
+    margin-bottom: 20px;
+}
+.about .skills .skill h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+.about .skills .skill .the-progress {
+    width: 100%;
+    height: 30px;
+    background-color: #9e9e9e;
+    position: relative;
+}
+.about .skills .skill .the-progress span {
+    background-color: #616161;
+    position: relative;
+    height: 100%;
+    display: block
+}
+.about .skills .skill .the-progress span::before {
+    content: attr(data-progress);
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: -44px;
+    right: -18px;
+    border-radius: 4px;
+    width: 40px;
+    text-align: center;
+}
+.about .skills .skill .the-progress span::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black transparent transparent;
+    right: -8px;
+    top: -15px;
+}
+.about  a {
+    display: block;
+    background-color: #616161;
+    color: white;
+    width: fit-content;
+    padding: 5px 15px;
+    text-transform: capitalize;
+}
+.about a::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f019";
+    font-weight: 900;
+    margin-right: 15px;
+}
+.about  a:hover {
+    background-color: #ccc;
+    color: black;
+}
+/* End About */
+
+/* start charge */
+.charge {
+    margin-top: 30px;
+}
+.charge h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.charge .boxs {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+.charge .boxs .box {
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.charge .boxs .box::before {
+    content: '   ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 30%);
+}
+.charge .boxs .box:hover::before {
+    display: none;
+}
+.charge .boxs .box h3 {
+    padding: 30px 0;
+    font-size: 25px;
+    background-color: #616161;
+    color: white;
+    font-weight: normal;
+}
+.charge .boxs .box:hover h3 {
+    background-color: #000;
+}
+.charge .boxs .pro h3 {
+    background-color: #009688;
+}
+.charge .boxs .pro:hover h3 {
+    background-color: #009688;
+}
+.charge .boxs .box .Lest {
+    background-color: white;
+}
+.charge .boxs .box .Lest li {
+    padding: 20px 0;
+}
+.charge .boxs .box .Lest li:not(:first-child) {
+    border-top: 1px solid #ddd;
+}
+.charge .boxs .box .Lest li span {
+    display: block;
+    font-size: 13px;
+    color: #777;
+}
+.charge .boxs .box .Lest li span:first-child {
+    font-size: 35px;
+    color: #2196f3;
+}
+.charge .boxs .box .foot {
+    padding: 25px 0;
+}
+.charge .boxs .box .foot a {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: white;
+    background-color: #009688;
+    padding: 10px 15px;
+}
+.charge .boxs .box .foot a:hover {
+    background-color: #000;
+}
+/* End charge */
+
+/* start contact */
+.contact {
+    margin-top: 80px;
+    background-color: #9e9e9e;
+}
+.contact h2 {
+    font-size: 32px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.contact .contact-head {
+    display: flex;
+    margin-top: 20px;
+}
+@media (max-width: 475px) {
+    .contact .contact-head {
+        flex-direction: column;
+    }
+}
+.contact .contact-head .box {
+    background-color: #616161;
+    color: white;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+}
+.contact .contact-head .maup {
+    background-color: #009688;
+}
+.contact .contact-head .box i {
+    font-size: 30px;
+}
+.contact .contact-head .box span {
+    display: block;
+    margin-top: 20px;
+}
+
+.contact .contact-foot {
+    margin-top: 40px;
+    padding-bottom: 30px;
+    border-top: 1px solid #eee;
+}
+.contact .contact-foot form label {
+    text-transform: capitalize;
+    font-size: 18px;
+    display: block;
+    padding-top: 20px;
+}
+.contact .contact-foot form input {
+    display: block;
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    outline: none;
+    caret-color: #009688;
+    font-size: 15px;
+}
+.contact .contact-foot form button {
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+.contact .contact-foot form button:hover {
+    background-color: #ccc;
+    color: #000;
+}
+.contact .contact-foot form button i {
+    margin-right: 10px;
+}
+/* End contact */
+
+/* strat Footer */
+.Footer {
+    margin-left: 300px;
+    padding-bottom: 25px;
+    background-color: #616161;
+}
+@media (max-width: 991px) {
+    .Footer  {
+        margin-left: 0;
+        transition: 0.3s;
+    }
+}
+.Footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.Footer .box {
+    padding-top: 40px;
+    color: white;
+}
+.Footer .box h3 {
+    font-size: 28px;
+    font-weight: normal;
+}
+.Footer .box .Praesent p {
+    margin-bottom: 15px;
+}
+.Footer .box .Praesent span a {
+    color: #041d31;
+    text-decoration: underline;
+}
+.Footer .box .text {
+    display: flex;
+    margin-top: 15px;
+}
+.Footer .box .top {
+    border-top: 1px solid #ddd;
+    padding-top: 15px
+}
+.Footer .box .text img {
+    width: 64px;
+    max-width: 100%;
+    border-radius: 6px;
+}
+.Footer .box .text .content-text {
+    margin-left: 15px;
+}
+.Footer .box .text .content-text h4 {
+    font-size: 20px;
+    font-weight: normal
+}
+.Footer .box .text .content-text p {
+    font-size: 16px
+}
+.Footer .box .content-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.Footer .box .content-box span:first-child {
+    background-color: #000;
+    font-size: 16px;
+    color: white;
+}
+.Footer .box .content-box span {
+    display: block;
+    background-color: #9e9e9e;
+    font-size: 13px;
+    padding: 0 16px;
+    color: #000;
+    border-radius: 6px;
+}
+
+/* End Footer */
+
+
+/* start Animation */
+
+/* End Animation */
